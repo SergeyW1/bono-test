@@ -1,0 +1,383 @@
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-9?styles=49034,49040,49044,49045');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
+
+$dark-blue: #0A2756;
+$blue: #007DFE;
+$white: #FFFFFF;
+$base: 0.6rem;
+
+body {
+	// font-family: 'Helvetica Neue', sans-serif;
+	font-family: 'Roboto', sans-serif;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1139px;
+	padding-right: 50px;
+	padding-left: 51px;
+	margin: 0 auto;
+
+	a {
+		text-decoration: none;
+		color: $dark-blue;
+	}
+
+	&__logo {
+		font-size: 29px;
+		line-height: 35px;
+		color: $dark-blue;
+		font-weight: 400;
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			height: 42px;
+			width: 1px;
+			background: #C4C4C4;
+			left: 174px;
+			top: -3px;
+		}
+	}
+
+	&__list {
+		list-style-type: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 740px;
+	}
+
+	&__btn {
+		color: $blue;
+		padding: 8px 32px;
+		border: 1px solid $blue;
+		cursor: pointer;
+		background: $white;
+	}
+
+	&__links {
+		display: flex;
+		align-items: center;
+		width: 60px;
+		justify-content: space-between;
+		padding-left: 130px;
+	}
+
+	&__mail {
+		background-image: url('../images/mail.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 25px;
+		height: 19px;
+	}
+
+	&__facebook {
+		background-image: url('../images/facebook.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 16px;
+		height: 26px;
+	}
+}
+
+.container {
+	width: 1240px;
+	height: 933px;
+	margin: 0 auto;
+	background-color: $dark-blue;
+
+	.main {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		padding: 32px 38px 162px 168px;
+
+		&__title {
+			background-image: url('../images/title.svg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 535px;
+			height: 300px;
+			margin-top: 37px;
+		}
+
+		&__icon {
+			background-image: url('../images/title-icon.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 397px;
+			height: 361px;
+			margin-left: 102px;
+		}
+
+		&__btn {
+			font-weight: 700;
+			display: inline-block;
+			background-color: #007DFE;
+			border: 1px solid #007DFE;
+			padding: 26px 50px;
+			font-size: 14px;
+			color: #FFFFFF;
+			letter-spacing: 8.2px;
+			text-transform: uppercase;
+			cursor: pointer;
+			margin-top: 41px;
+			margin-left: 54px;
+		}
+
+		&__text {
+			color: $white;
+			display: flex;
+			flex-direction: column;
+			margin-top: 38px;
+			margin-left: 53px;
+			max-width: 521px;
+
+			&--title {
+				font-size: 20px;
+				font-weight: 700;
+				line-height: 24px;
+			}
+
+			&--content {
+				font-size: 18px;
+				margin-top: 33px;
+				line-height: 25px;
+				max-width: 500px;
+			}
+		}
+
+		.btn-bottom {
+			opacity: 1;
+			visibility: visible;
+			position: absolute;
+			height: 33px;
+			width: 93px;
+			bottom: 106px;
+			right: 572px;
+			cursor: pointer;
+
+			&::after {
+				content: '';
+				position: absolute;
+				height: 2px;
+				width: 52px;
+				background-color: #FFFFFF;
+				transform: rotate(33deg);
+				left: -1px;
+				top: 16px;
+				bottom: 0;
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				height: 2px;
+				width: 52px;
+				background-color: #FFFFFF;
+				transform: rotate(327deg);
+				left: 41px;
+				top: 16px;
+				bottom: 0;
+			}
+		}
+	}
+}
+
+.gallery {
+	width: 1240px;
+	margin: 0 auto;
+	position: relative;
+
+	&__title {
+		font-size: 60px;
+		font-weight: 200;
+		padding-left: 222px;
+		margin-bottom: 58px;
+		margin-top: 78px;
+		color: $dark-blue;
+	}
+
+	&__photo {
+		&--item {
+			background-image: url('../images/Yaron_Pharizon.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 376px;
+			width: 378px;
+		}
+	}
+
+	.gallery-container {
+		display: flex;
+		height: 100%;
+		align-items: end;
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		font-size: 24px;
+		color: #FFFFFF;
+		width: 100%;
+		height: 111px;
+		background-color: #0080FFB2;
+		justify-content: space-evenly;
+		padding-left: 30px;
+
+		&:last-child {
+			font-size: 20px;
+		}
+	}
+
+	.swiper {
+		position: static;
+		max-width: 800px;
+
+		.swiper-button-next {
+			position: absolute;
+			background-image: url('../images/slider-right.svg');
+			background-repeat: no-repeat;
+			height: 89px;
+			width: 30px;
+			right: 121px;
+			top: 283px;
+
+			&::after {
+				content: '';
+			}
+		}
+
+		.swiper-button-prev {
+			position: absolute;
+			background-image: url('../images/slider-left.svg');
+			background-repeat: no-repeat;
+			height: 87px;
+			width: 32px;
+			left: 125px;
+			top: 283px;
+
+			&::after {
+				content: '';
+			}
+		}
+
+		.swiper-pagination {
+			bottom: -62px;
+		}
+
+		.swiper-pagination-bullet {
+			width: 13px;
+			height: 13px;
+			margin: 0 18px;
+		}
+
+		.swiper-pagination-bullet-active {
+			background-color: $dark-blue;
+		}
+	}
+}
+
+.form-container {
+	width: 1240px;
+	max-height: 987px;
+	margin: 140px auto 0 auto;
+	background-color: $dark-blue;
+
+	.form {
+		color: $white;
+		padding: 150px 215px 161px;
+
+		&__title {
+			font-size: 60px;
+			margin-bottom: 69px;
+		}
+
+		&__input {
+			display: flex;
+			margin-bottom: 100px;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 22px;
+
+			input {
+				background-color: $white;
+				outline: none;
+				border: 1px solid;
+			}
+		}
+
+		&__name {
+			padding: 13px 19px;
+			width: 350px;
+		}
+
+		&__mail {
+			padding: 13px 19px;
+			width: 350px;
+		}
+
+		&__message {
+			padding: 14px 20px;
+			outline: none;
+			width: 800px;
+			height: 100px;
+			resize: none;
+		}
+
+		&__btn {
+			display: flex;
+			width: 100%;
+			justify-content: end;
+
+			&--item {
+				color: $white;
+				background-color: $blue;
+				border: 1px solid $blue;
+				text-transform: uppercase;
+				font-size: 14px;
+				cursor: pointer;
+				padding: 28px 25px 28px 35px;
+				line-height: 15px;
+				letter-spacing: 11px;
+				font-weight: 600;
+			}
+		}
+
+		&__contact {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-size: 18px;
+			padding-top: 6px;
+			padding-right: 12px;
+
+			&--mail {
+				font-size: 40px;
+			}
+
+
+			&--phone {
+				font-size: 32px;
+				padding-top: 8px;
+			}
+
+			&--info {
+				cursor: pointer;
+				font-weight: 200;
+				font-size: 17px;
+				text-decoration: underline;
+				text-align: start;
+				padding: 27px 26px 0px 0;
+			}
+		}
+
+		.no-valid {
+			border: 2px solid #FB5555;
+		}
+	}
+}
