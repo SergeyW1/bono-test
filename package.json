@@ -2,7 +2,9 @@
   "name": "name-project",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack serve --env develop"
+    "dev": "webpack serve --env develop",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "css-loader": "^6.5.1",
