@@ -55,7 +55,7 @@ scrollBottom.addEventListener('click', () => {
 
 // Swiper
 
-const swiper = new Swiper(".swiper", {
+new Swiper(".swiper", {
 	speed: 500,
 	loop: true,
 	pagination: {
