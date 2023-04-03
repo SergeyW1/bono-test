@@ -7,6 +7,7 @@ const formBtn = document.querySelector('.form__btn')
 const btnMenu = document.querySelector('.btn-menu')
 const burgerMenu = document.querySelector('.burger-menu')
 const list = document.querySelector('.header-menu__list')
+const container = document.querySelector('.container')
 
 const formMap = new Map()
 
@@ -93,4 +94,10 @@ new Swiper(".swiper", {
 	},
 	spaceBetween: 50,
 });
+
+
+if (container.style.width < '321px') {
+	console.log('hello');
+}
+
 

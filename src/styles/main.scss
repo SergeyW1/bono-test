@@ -220,7 +220,7 @@ body {
 
 	&__title {
 		font-size: 60px;
-		font-weight: 200;
+		font-weight: 400;
 		padding-left: 222px;
 		margin-bottom: 58px;
 		margin-top: 78px;
@@ -254,7 +254,7 @@ body {
 		justify-content: space-evenly;
 		padding-left: 30px;
 
-		&:last-child {
+		&:nth-of-type(0) {
 			font-size: 20px;
 		}
 	}
@@ -343,7 +343,7 @@ body {
 		}
 
 		&__mail {
-			padding: 15px 33px;
+			padding: 15px 26px;
 			font-size: 17px;
 			width: 393px;
 		}
@@ -413,6 +413,7 @@ body {
 
 @media all and (max-width: 768px) {
 	.header {
+		width: 768px;
 		height: 65px;
 
 		.btn-menu {
@@ -423,7 +424,7 @@ body {
 			height: 30px;
 			cursor: pointer;
 			margin-right: 45px;
-			right: 25px;
+			right: 0;
 
 			span {
 				position: absolute;
@@ -447,7 +448,7 @@ body {
 
 		.active {
 			position: absolute;
-			right: 29px;
+			right: 0px;
 			top: 19px;
 			z-index: 20;
 
@@ -469,6 +470,8 @@ body {
 		}
 
 		&__logo {
+			width: 22%;
+			font-size: 29px;
 
 			&::after {
 				opacity: 0;
@@ -477,8 +480,10 @@ body {
 		}
 
 		.burger-menu {
+			display: none;
 			opacity: 0;
 			visibility: hidden;
+			width: 77%;
 
 			.header-menu {
 				width: 100%;
@@ -525,7 +530,7 @@ body {
 			z-index: 12;
 			display: flex;
 			flex-direction: column;
-			height: 934px;
+			height: 851px;
 		}
 
 		.list-active {
@@ -534,6 +539,254 @@ body {
 			font-size: 32px;
 			height: 95%;
 			justify-content: space-evenly;
+		}
+	}
+
+	.container {
+		width: 768px;
+		height: 851px;
+
+		.main {
+			padding: 53px 37px 138px 33px;
+
+			&__title {
+				width: 394px;
+				height: 220px;
+			}
+
+			&__icon {
+				width: 244px;
+				height: 211px;
+				margin-left: 60px;
+			}
+
+			.btn-bottom {
+				bottom: 0px;
+				right: 344px;
+			}
+		}
+	}
+
+	.gallery {
+		width: 768px;
+
+		&__title {
+			font-size: 50px;
+			font-weight: 400;
+			padding-left: 85px;
+			margin-top: 30px;
+			margin-bottom: 70px;
+		}
+
+		&__photo {
+			&--item {
+				width: 294px !important;
+				height: 311px;
+			}
+		}
+
+		.swiper {
+			max-width: 639px;
+
+			.swiper-button-next {
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			.swiper-button-prev {
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			.swiper-pagination {
+				bottom: -107px;
+			}
+		}
+	}
+
+	.form-container {
+		width: 768px;
+
+		.form {
+			padding: 100px 100px 60px 70px;
+
+			&__title {
+				font-size: 50px;
+			}
+
+			&__name {
+				width: 288px;
+			}
+
+			&__mail {
+				width: 288px;
+			}
+
+			&__btn {
+				&--item {
+					font-size: 14px;
+					padding: 26px 23px 26px 33px;
+				}
+			}
+		}
+	}
+}
+
+@media all and (max-width: 320px) {
+	.header {
+		width: 320px;
+
+		&__logo {
+			width: 51%;
+		}
+
+		.btn-menu {
+			right: -15px;
+		}
+
+		.active {
+			right: -15px;
+			top: 17px;
+		}
+
+		.active-menu {
+			width: 320px;
+			height: 450px;
+		}
+
+		.list-active {
+			font-size: 22px;
+		}
+
+		.burger-menu {
+			.header-menu {
+				&__btn {
+					font-size: 22px;
+					padding: 8px 29px;
+				}
+			}
+
+			.link {
+				&__mail {
+					width: 32px;
+					height: 23px;
+				}
+
+				&__facebook {
+					width: 20px;
+					height: 34px;
+				}
+			}
+		}
+	}
+
+	.container {
+		height: 1220px;
+		width: 320px;
+
+		.main {
+			padding: 60px 20px 130px;
+
+			&__title {
+				width: 280px;
+				height: 157px;
+				margin-top: 0;
+			}
+
+			&__icon {
+				width: 237px;
+				height: 215px;
+				margin-left: 0;
+				margin-top: 192px;
+			}
+
+			&__btn {
+				position: absolute;
+				top: 281px;
+				margin: 0;
+				padding: 25px 20px;
+				letter-spacing: 4px;
+			}
+
+			.btn-bottom {
+				display: none;
+			}
+
+			&__text {
+				padding-top: 48px;
+				margin: 0 auto;
+				max-width: 254px;
+			}
+		}
+	}
+
+	.gallery {
+		width: 320px;
+
+		&__text {
+			height: 82px;
+			font-size: 13px;
+		}
+
+		.swiper {
+			max-width: 280px;
+		}
+
+		&__title {
+			font-size: 40px;
+			padding-left: 30px;
+			margin-bottom: 40px;
+			margin-top: 7px;
+		}
+
+		&__photo {
+			&--item {
+				width: 280px !important;
+				height: 296px;
+			}
+		}
+	}
+
+	.form-container {
+		width: 320px;
+
+		.form {
+			padding: 76px 30px 62px 20px;
+
+			&__title {
+				font-size: 40px;
+			}
+
+			&__btn {
+				margin-top: 130px;
+				justify-content: center;
+
+				&--item {
+					letter-spacing: 6px;
+					font-size: 12px;
+					padding: 24px 50px;
+				}
+			}
+
+			&__contact {
+				padding: 0;
+
+				&--mail {
+					font-size: 26px;
+					font-weight: 300;
+				}
+
+				&--phone {
+					font-size: 22px;
+					font-weight: 200;
+				}
+
+				&--info {
+					padding-right: 0;
+					padding-top: 16px;
+					font-size: 15px;
+				}
+			}
 		}
 	}
 }
