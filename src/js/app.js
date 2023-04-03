@@ -2,6 +2,9 @@ const userName = document.querySelector('.form__name')
 const userMail = document.querySelector('.form__mail')
 const userMessage = document.querySelector('.form__message')
 const formBtn = document.querySelector('.form__btn')
+const btnMenu = document.querySelector('.btn-menu')
+const burgerMenu = document.querySelector('.burger-menu')
+const list = document.querySelector('.header-menu__list')
 
 const formMap = new Map()
 
@@ -46,6 +49,18 @@ scrollBottom.addEventListener('click', () => {
 		top: innerHeight,
 		behavior: "smooth"
 	})
+})
+
+document.querySelector('.header__logo').addEventListener('click', () => {
+	console.log('eee');
+})
+
+btnMenu.addEventListener('click', (e) => {
+	e.preventDefault();
+	btnMenu.classList.toggle('active')
+	burgerMenu.classList.toggle('active-menu')
+	list.classList.toggle('list-active')
+	console.log('hee');
 })
 
 

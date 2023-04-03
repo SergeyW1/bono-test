@@ -5,30 +5,40 @@ $blue: #007DFE;
 $white: #FFFFFF;
 $base: 0.6rem;
 
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
 }
 
 .header {
+	height: 65px;
+	position: relative;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	max-width: 1139px;
-	padding-right: 50px;
-	padding-left: 51px;
+	margin: 0 auto;
+	width: 1240px;
 	margin: 0 auto;
 
-	a {
-		text-decoration: none;
-		color: $dark-blue;
+	.btn-menu {
+		opacity: 0;
+		visibility: hidden;
 	}
 
 	&__logo {
+		text-decoration: none;
+		width: 16%;
+		display: flex;
 		font-size: 29px;
 		line-height: 35px;
 		color: $dark-blue;
 		font-weight: 400;
 		position: relative;
+		justify-content: end;
 
 		&::after {
 			content: "";
@@ -36,51 +46,67 @@ body {
 			height: 42px;
 			width: 1px;
 			background: #C4C4C4;
-			left: 174px;
+			left: 221px;
 			top: -3px;
 		}
 	}
+}
 
-	&__list {
-		list-style-type: none;
+.burger-menu {
+	display: flex;
+	width: 84%;
+
+	.header-menu {
+		width: 77%;
+
+		&__list {
+			list-style-type: none;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			a {
+				text-decoration: none;
+				color: $dark-blue;
+			}
+		}
+
+		&__btn {
+			color: $blue;
+			padding: 8px 32px;
+			border: 1px solid $blue;
+			cursor: pointer;
+			background: $white;
+		}
+	}
+
+	.link {
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
-		width: 740px;
-	}
-
-	&__btn {
-		color: $blue;
-		padding: 8px 32px;
-		border: 1px solid $blue;
-		cursor: pointer;
-		background: $white;
-	}
-
-	&__links {
-		display: flex;
-		align-items: center;
-		width: 60px;
+		width: 6%;
 		justify-content: space-between;
-		padding-left: 130px;
-	}
+		padding-left: 121px;
 
-	&__mail {
-		background-image: url('../images/mail.svg');
-		background-repeat: no-repeat;
-		background-size: cover;
-		width: 25px;
-		height: 19px;
-	}
+		&__mail {
+			background-image: url('../images/mail.svg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 25px;
+			height: 19px;
+		}
 
-	&__facebook {
-		background-image: url('../images/facebook.svg');
-		background-repeat: no-repeat;
-		background-size: cover;
-		width: 16px;
-		height: 26px;
+		&__facebook {
+			background-image: url('../images/facebook.svg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 16px;
+			height: 26px;
+		}
 	}
 }
+
+
+
 
 .container {
 	width: 1240px;
@@ -376,6 +402,117 @@ body {
 
 		.no-valid {
 			border: 2px solid #FB5555;
+		}
+	}
+}
+
+@media all and (max-width: 768px) {
+	.header {
+		height: 65px;
+
+		.btn-menu {
+			opacity: 1;
+			visibility: visible;
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			cursor: pointer;
+			margin-right: 45px;
+			right: 25px;
+
+			span {
+				position: absolute;
+				background-color: $dark-blue;
+				width: 30px;
+				height: 2px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				transition: .25s ease-in-out;
+
+				&:nth-of-type(2) {
+					top: calc(50% - 9px)
+				}
+
+				&:nth-of-type(3) {
+					top: calc(50% + 9px)
+				}
+			}
+		}
+
+		.active {
+			position: absolute;
+			right: 29px;
+			top: 19px;
+			z-index: 20;
+
+			span {
+				&:first-of-type {
+					transform: scale(0);
+				}
+
+				&:nth-of-type(2) {
+					top: 50%;
+					transform: translate(-50%, -50%) rotate(45deg);
+				}
+
+				&:nth-of-type(3) {
+					top: 50%;
+					transform: translate(-50%, -50%) rotate(-45deg);
+				}
+			}
+		}
+
+		&__logo {
+
+			&::after {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+
+		.burger-menu {
+			opacity: 0;
+			visibility: hidden;
+
+			.header-menu {
+				width: 100%;
+				height: 70%;
+			}
+
+			.link {
+				height: 10%;
+				width: 103%;
+				display: flex;
+				justify-content: center;
+				padding: 0;
+				gap: 27px;
+				align-items: center;
+			}
+		}
+
+		.active-menu {
+			opacity: 1;
+			visibility: visible;
+			position: fixed;
+			background-color: #ffff;
+			width: 100%;
+			left: 0px;
+			top: 64px;
+			right: 0px;
+			bottom: 0px;
+			z-index: 12;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+		}
+
+		.list-active {
+			display: flex;
+			flex-direction: column;
+			font-size: 32px;
+			height: 95%;
+			justify-content: space-evenly;
 		}
 	}
 }
