@@ -78,7 +78,7 @@ btnMenu.addEventListener('click', (e) => {
 
 // Swiper
 
-new Swiper(".swiper", {
+let swiper = new Swiper(".swiper", {
 	speed: 500,
 	loop: true,
 	pagination: {
@@ -96,8 +96,51 @@ new Swiper(".swiper", {
 });
 
 
-if (container.style.width < '321px') {
-	console.log('hello');
+
+window.addEventListener('resize', () => {
+	if (window.screen.width < 321) {
+		swiper = null
+		swiper = new Swiper(".swiper", {
+			pagination: {
+				el: ".swiper-pagination",
+				type: "bullets",
+				clickable: true,
+				dynamicBullets: true,
+			},
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+			spaceBetween: 50,
+		});
+	}
+})
+
+resizeWidth()
+
+function resizeWidth() {
+	if (window.screen.width < 321) {
+		swiper = null
+		swiper = new Swiper(".swiper", {
+			pagination: {
+				el: ".swiper-pagination",
+				type: "bullets",
+				clickable: true,
+				dynamicBullets: true,
+			},
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+			spaceBetween: 50,
+		});
+	}
 }
+
+
+
+// if (window.screen.width < '321') {
+// 	console.log('hello');
+// }
 
 
