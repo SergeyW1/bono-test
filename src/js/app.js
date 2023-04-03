@@ -7,7 +7,6 @@ const formBtn = document.querySelector('.form__btn')
 const btnMenu = document.querySelector('.btn-menu')
 const burgerMenu = document.querySelector('.burger-menu')
 const list = document.querySelector('.header-menu__list')
-const container = document.querySelector('.container')
 
 const formMap = new Map()
 
@@ -73,74 +72,33 @@ btnMenu.addEventListener('click', (e) => {
 
 
 
-
-
-
 // Swiper
 
-let swiper = new Swiper(".swiper", {
+new Swiper(".swiper", {
 	speed: 500,
 	loop: true,
 	pagination: {
 		el: ".swiper-pagination",
 		type: "bullets",
 		clickable: true,
+		dynamicBullets: true,
 	},
 	loop: true,
-	slidesPerView: 2,
+	slidesPerView: 1,
+	breakpoints: {
+		320: {
+			slidesPerView: 2,
+			spaceBetween: 50,
+			pagination: {
+				dynamicBullets: false
+			}
+		}
+	},
 	navigation: {
 		nextEl: ".swiper-button-next",
 		prevEl: ".swiper-button-prev",
 	},
-	spaceBetween: 50,
+	spaceBetween: 20,
 });
-
-
-
-window.addEventListener('resize', () => {
-	if (window.screen.width < 321) {
-		swiper = null
-		swiper = new Swiper(".swiper", {
-			pagination: {
-				el: ".swiper-pagination",
-				type: "bullets",
-				clickable: true,
-				dynamicBullets: true,
-			},
-			navigation: {
-				nextEl: ".swiper-button-next",
-				prevEl: ".swiper-button-prev",
-			},
-			spaceBetween: 50,
-		});
-	}
-})
-
-resizeWidth()
-
-function resizeWidth() {
-	if (window.screen.width < 321) {
-		swiper = null
-		swiper = new Swiper(".swiper", {
-			pagination: {
-				el: ".swiper-pagination",
-				type: "bullets",
-				clickable: true,
-				dynamicBullets: true,
-			},
-			navigation: {
-				nextEl: ".swiper-button-next",
-				prevEl: ".swiper-button-prev",
-			},
-			spaceBetween: 50,
-		});
-	}
-}
-
-
-
-// if (window.screen.width < '321') {
-// 	console.log('hello');
-// }
 
 
