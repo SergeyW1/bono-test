@@ -1,3 +1,5 @@
+import Swiper from 'swiper/bundle';
+
 const userName = document.querySelector('.form__name')
 const userMail = document.querySelector('.form__mail')
 const userMessage = document.querySelector('.form__message')
@@ -60,7 +62,12 @@ btnMenu.addEventListener('click', (e) => {
 	btnMenu.classList.toggle('active')
 	burgerMenu.classList.toggle('active-menu')
 	list.classList.toggle('list-active')
-	console.log('hee');
+
+	if (btnMenu.classList.contains('active')) {
+		document.body.style.overflow = 'hidden';
+	} else {
+		document.body.style.overflow = 'scroll';
+	}
 })
 
 
